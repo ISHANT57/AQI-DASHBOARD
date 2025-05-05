@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exportable Reports | AQI Dashboard</title>
+  <link rel="stylesheet" href="/static/css/export_data.css">
+  <script src="/static/js/export_preview.js" defer></script>
+</head>
+<body>
+    <div id="lightToggle" onclick="toggleLightMode()">💡 Lights On / Off</div>
+
+<div class="export-container">
+  <h1>📁 Exportable Reports</h1>
+  <p>Sign in or log in to download available AQI datasets and reports.</p>
+
+  <div class="file-list">
+    <div class="file-card">
+      <h3>🌍 Worldwide AQI Report (PDF)</h3>
+      <button class="preview-btn" onclick="alert('PDF preview not supported yet.')">Preview</button>
+      <button class="disabled">Download</button>
+    </div>
+
+    <div class="file-card">
+      <h3>📊 AQI & Coordinates (CSV)</h3>
+      <button class="preview-btn" onclick="previewFile('/static/data/AQI and Lat Long of Countries.csv')">Preview</button>
+      <button class="disabled">Download</button>
+    </div>
+
+    <div class="file-card">
+      <h3>🌐 Country AQI Data (CSV)</h3>
+      <button class="preview-btn" onclick="previewFile('/static/data/polluted_COUNTRIES.csv')">Preview</button>
+      <button class="disabled">Download</button>
+    </div>
+
+    <div class="file-card">
+      <h3>🏙️ City AQI Monthly (CSV)</h3>
+      <button class="preview-btn" onclick="previewFile('/static/data/updated_polluted_cities_monthly_with_states.csv')">Preview</button>
+      <button class="disabled">Download</button>
+    </div>
+  </div>
+
+  <div class="auth-message">
+    🔐 Please log in to unlock downloads.
+    <div>
+      <button onclick="alert('Login system not implemented — demo only!')">Sign In</button>
+      <button onclick="alert('Login system not implemented — demo only!')">Register</button>
+    </div>
+  </div>
+</div>
+
+<!-- Preview Modal -->
+<div id="previewModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closePreview()">&times;</span>
+    <pre id="fileContent">Loading...</pre>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AQI Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- 🔹 Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <img src="/static/img/logo.jpeg" alt="Dashboard Logo" class="logo-img">
+        </div>
+
+        <div class="dashboard-box">
+            <h2 class="dashboard-title">AQI Dashboard</h2>
+            <div class="nav-box"><a href="/">Dashboard</a></div>
+            <div class="nav-box"><a href="/compare">Compare Countries</a></div>
+            <div class="nav-box"><a href="/city-view">City View</a></div>
+            <div class="nav-box"><a href="/about">About</a></div>
+        </div>
+
+        <div class="toggle-dark">
+            <label for="darkModeSwitch">Dark Mode</label>
+            <input type="checkbox" id="darkModeSwitch" checked>
+        </div>
+    </div>
+
+    <!-- 🔹 Main Content -->
+    <div class="main-content">
+        <h1 class="highlight">🌐 Global Air Quality Report - 2024</h1>
+
+        <!-- Overview -->
+        <h2 class="highlight">Overview</h2>
+        <p>
+            The <strong>World Air Quality Report 2024</strong> presents a comprehensive evaluation of air pollution trends across 140 countries and over 5,750 cities.
+            With over 15,000 monitoring stations contributing data, this report emphasizes the <span class="highlight">pressing need for global air quality reform</span>.
+        </p>
+        <p>
+            Globally, <strong class="highlight">only 7.6%</strong> of cities met the WHO's recommended PM2.5 threshold of 5μg/m³. In Asia, a staggering 97.7% of cities failed to meet the standard.
+        </p>
+
+        <!-- Most Polluted Countries -->
+        <h2 class="highlight">🌍 Most Polluted Countries in 2024</h2>
+        <ul>
+            <li><span class="country-link" data-country="Chad">Chad: </span> In 2024, <bold>Chad</bold> recorded an alarming AQI of 91.8, making it the most polluted country in Central Africa and topping the list as the #1 most polluted nation globally for the year.</li>
+            <li><span class="country-link" data-country="Bangladesh">Bangladesh: </span> ranked 2nd globally with the worst air quality, recording no good air quality month in 2024.</li>
+            <li><span class="country-link" data-country="Pakistan">Pakistan: </span> ranked as the third most polluted country in 2024, with cities like Peshawar and Lahore frequently recording AQI levels well above the unhealthy threshold.</li>
+            <li><span class="country-link" data-country="India">India: </span> ​In 2024, India ranked as the fifth most polluted country globally, with an average PM2.5 concentration of 50.6 µg/m³—ten times higher than the World Health Organization's recommended limit. Despite this, India was home to 13 of the world's 20 most polluted cities.​
+                
+                Byrnihat, a small industrial town on the Assam-Meghalaya border, emerged as the most polluted city worldwide, recording an annual average PM2.5 concentration of 128.2 µg/m³. New Delhi, the national capital, followed closely with PM2.5 levels averaging 107 µg/m³, making it India's second most polluted city. ​
+
+                The high pollution levels in these cities are attributed to factors such as industrial emissions, vehicular pollution, and unfavorable meteorological conditions that trap pollutants close to the ground.</li>
+        </ul>
+        <p style="font-size: 0.85em; color: #aaa;">★ Sources: Indian Express, Wikipedia, and <a href="https://www.iqair.com/in-en/world-most-polluted-countries" target="_blank" rel="noopener noreferrer">IQAir</a></p>
+
+        <!-- Chart Container -->
+        <div id="chart-container" class="hidden">
+            <h3 id="chart-title">AQI Trend</h3>
+            <canvas id="countryChart" width="600" height="300"></canvas>
+        </div>
+
+        <!-- Most Polluted Cities -->
+        <h2 class="highlight">📈 Most Polluted Cities in India (2024)</h2>
+        <ul>
+            <li><strong>New Delhi</strong> (AQI: 169)</li>
+            <li><strong>Greater Noida</strong> (AQI: 166)</li>
+            <li><strong>Noida</strong> (AQI: 161)</li>
+            <li><strong>Ghaziabad</strong> (AQI: 159)</li>
+            <li><strong>Faridabad</strong> (AQI: 154)</li>
+            <li><strong>Gurgaon</strong> (AQI: 154)</li>
+            <li><strong>Bhiwadi</strong> (AQI: 153)</li>
+            <li><strong>Patna</strong> (AQI: 145)</li>
+        </ul>
+
+        <!-- Causes -->
+        <h2 class="highlight">🛑 Causes of Air Pollution</h2>
+<ul>
+    <li class="hover-cause">
+        <strong>Vehicular Emissions:</strong>
+        <div class="cause-image">
+            <img src="/static/img/img1.jpeg" alt="Vehicular Emissions">
+        </div>
+        Road transport is a major source of urban air pollution. Vehicles emit <span class="highlight">nitrogen oxides (NOₓ)</span>, <span class="highlight">carbon monoxide (CO)</span>, and <span class="highlight">particulate matter (PM)</span>. According to the World Health Organization, vehicle emissions are responsible for about <span class="highlight">30% of PM2.5 levels in major cities</span>.
+        <a href="https://en.wikipedia.org/wiki/Vehicle_emissions_control" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+    </li>
+    <li class="hover-cause">
+        <strong>Industrial Activity:</strong>
+        <div class="cause-image">
+            <img src="/static/img/img2.jpeg" alt="Industrial Activity">
+        </div>
+        Industries, especially in developing nations, release pollutants like <span class="highlight">sulfur dioxide (SO₂)</span>, <span class="highlight">nitrogen dioxide (NO₂)</span>, and <span class="highlight">volatile organic compounds (VOCs)</span>. These contribute to smog and acid rain. In India, industry accounts for about <span class="highlight">21% of total air pollution emissions</span>. 
+        <a href="https://en.wikipedia.org/wiki/Industrial_waste" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+    </li>
+    
+    <li class="hover-cause">
+        <strong>Construction and Road Dust:</strong>
+        <div class="cause-image">
+            <img src="/static/img/img3.jpeg" alt="Construction and Road Dust">
+        </div>
+        Unregulated construction releases <span class="highlight">fugitive dust</span>, consisting of PM10 and PM2.5 particles. According to the Centre for Science and Environment (CSE), construction dust contributes to <span class="highlight">over 30% of PM2.5 pollution</span> in Indian cities like Delhi.
+        <a href="https://en.wikipedia.org/wiki/Fugitive_dust" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+    </li>
+    
+    <li class="hover-cause">
+        <strong>Agricultural Practices:</strong>
+        <div class="cause-image">
+            <img src="/static/img/img4.jpeg" alt="Agricultural Practices">
+        </div>
+        Stubble burning in northern India releases vast amounts of <span class="highlight">PM2.5, methane, and ammonia</span>. The Indian Agricultural Research Institute reports that stubble burning contributes up to <span class="highlight">35% of Delhi's pollution</span> in peak winter months. 
+        <a href="https://en.wikipedia.org/wiki/Agricultural_pollution" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+    </li>
+    
+    <li class="hover-cause">
+        <strong>Waste Burning:</strong>
+        <div class="cause-image">
+            <img src="/static/img/img5.jpeg" alt="Waste Burning">
+        </div>
+        Open burning of municipal and plastic waste emits toxic chemicals including <span class="highlight">black carbon</span>, <span class="highlight">dioxins</span>, and <span class="highlight">furans</span>. Studies estimate this source contributes up to <span class="highlight">11% of ambient PM2.5 levels</span> in Indian cities.
+        <a href="https://en.wikipedia.org/wiki/Open_burning_of_waste" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+    </li>
+    
+    <li class="hover-cause">
+        <strong>Natural Causes:</strong>
+        <div class="cause-image">
+            <img src="/static/img/img6.jpeg" alt="Natural Causes">
+        </div>
+        Dust storms, wildfires, and volcanic eruptions contribute to temporary spikes in air pollution. For instance, <span class="highlight">dust storms from the Thar Desert</span> raise PM10 levels significantly during summer months across northwestern India.
+        <a href="https://simple.wikipedia.org/wiki/Air_pollution" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+    </li>    
+</ul>
+
+<p style="font-size: 0.85em; color: #aaa;">★ Sources: Wikipedia</p>
+
+        <!-- Health Impact -->
+<h2 class="highlight">🏥 Health Impact</h2>
+<p>
+    Air pollution poses a significant threat to global health, contributing to a wide range of serious health conditions.
+</p>
+<ul>
+    <li>
+        <strong>Premature Deaths:</strong>
+        According to the <strong>WHO</strong>, air pollution is responsible for around 
+        <span class="highlight">6.7 million premature deaths annually</span>, including 
+        <span class="highlight">4.2 million</span> from outdoor air pollution.
+    </li>
+    <li>
+        <strong>Cardiovascular & Respiratory Diseases:</strong>
+        Prolonged exposure to pollutants like <span class="highlight">PM2.5</span> and <span class="highlight">NO₂</span> increases the risk of 
+        <span class="highlight">heart disease</span>, <span class="highlight">stroke</span>, 
+        <span class="highlight">chronic obstructive pulmonary disease (COPD)</span>, and 
+        <span class="highlight">lung cancer</span>.
+    </li>
+    <li>
+        <strong>Children's Health:</strong>
+        Air pollution causes <span class="highlight">acute lower respiratory infections</span> in children 
+        and impairs lung development, especially in urban areas with high traffic and industrial activity.
+    </li>
+    <li>
+        <strong>Pregnancy & Infant Health:</strong>
+        Exposure to polluted air during pregnancy is linked to 
+        <span class="highlight">up to 6 million premature births</span> and 
+        <span class="highlight">3 million low-birth-weight babies</span> globally each year.
+    </li>
+    <li>
+        <strong>Brain & Neurological Effects:</strong>
+        Recent studies suggest that pollutants may enter the brain and contribute to 
+        <span class="highlight">neurodegenerative diseases</span> such as Alzheimer's and Parkinson's.
+    </li>
+</ul>
+
+<p style="font-size: 0.85em; color: #aaa;">★ Sources: Wikipedia</p>
+
+<!-- Conclusion -->
+<h2 class="highlight">✅ Conclusion</h2>
+<p>
+    The overwhelming health impact of air pollution demands immediate action. 
+    High AQI levels in cities like <strong>Delhi</strong> and <strong>Lahore</strong> show the urgent need for reform.
+</p>
+<p>
+    Air pollution is not just an environmental crisis — it's a <span class="highlight">human health emergency</span>. 
+    Governments, communities, and individuals must collaborate to:
+</p>
+<ul>
+    <li>Enforce stricter <span class="highlight">emission standards</span>.</li>
+    <li>Promote <span class="highlight">clean energy solutions</span> and public transport.</li>
+    <li>Raise awareness and support community-led environmental efforts.</li>
+    <li>Invest in <span class="highlight">air quality monitoring</span> and data-driven policy making.</li>
+</ul>
+
+
+    <!-- Script to Render Chart -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const chartTitle = document.getElementById("chart-title");
+            const chartContainer = document.getElementById("chart-container");
+            const ctx = document.getElementById("countryChart").getContext("2d");
+
+            const aqiData = {
+                "Chad": ["NA", "NA", "NA",75.9,89.7,"NA",91.8,],
+                "Bangladesh": [97.1,83.3,77.1,76.9,65.8,79.9,78],
+                "Pakistan":   [74.3,65.8,59,66.8,70.9,73.7,73.7],
+                "India":      [72.5,58.1,51.9,58.1,53.3,54.4,50.6]
+            };
+
+            const years = ["2018","2019","2020","2021","2022","2023","2024"];
+            let chartInstance = null;
+
+            document.querySelectorAll(".country-link").forEach(link => {
+                link.addEventListener("click", () => {
+                    const country = link.dataset.country;
+                    const values = aqiData[country];
+                    chartTitle.textContent = `AQI Trend for ${country}`;
+                    chartContainer.classList.remove("hidden");
+
+                    if (chartInstance) chartInstance.destroy();
+
+                    chartInstance = new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: years,
+                            datasets: [{
+                                label: `${country} AQI`,
+                                data: values,
+                                borderColor: "#03dac6",
+                                backgroundColor: "rgba(3, 218, 198, 0.1)",
+                                fill: false,
+                                tension: 0.3
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                y: {
+                                    beginAtZero: false,
+                                    title: {
+                                        display: true,
+                                        text: "AQI"
+                                    }
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

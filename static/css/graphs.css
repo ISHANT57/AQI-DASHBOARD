@@ -1,0 +1,111 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.page-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.page-header h1 {
+  font-size: 2.5em;
+}
+
+.controls {
+  width: 95%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+}
+
+.controls select, .controls button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  min-width: 160px;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #444;
+  transition: background-color 0.3s;
+}
+
+.controls select:hover,
+.controls button:hover {
+  background-color: #2e2e2e;
+}
+
+.controls button {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b;
+}
+
+.chart-box {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 950px;
+  margin: 30px auto;
+}
+
+/* Sun toggle floating button */
+#sun-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 9999;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+/* Colorful mode theme */
+.colorful-mode {
+  background: radial-gradient(circle at top left, #ff7eb3, #65d6ce, #ffc75f);
+  color: #111;
+}
+
+.colorful-mode canvas {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.colorful-mode .chart-box {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid #fff;
+}
+
+.colorful-mode .controls select, 
+.colorful-mode .controls button {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+.colorful-mode .controls button:hover {
+  background: linear-gradient(to right, #ff7eb3, #65d6ce);
+  color: #000;
+  box-shadow: 0 0 10px #65d6ce, 0 0 20px #ff7eb3;
+}

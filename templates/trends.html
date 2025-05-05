@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AQI Country Trends</title>
+  <link rel="stylesheet" href="/static/css/trends.css">
+  <script src="/static/js/trends.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>Country-wise AQI Trends (2018-2024)</h1>
+</div>
+<div class="aqi-basics">
+  <h2>US EPA AQI Basics</h2>
+  <p>The <strong>Air Quality Index (AQI)</strong> developed by the US Environmental Protection Agency (EPA) is a public-friendly, color-coded numerical system ranging from 0–500. It translates complex pollutant concentrations into categories like <em>Good</em>, <em>Moderate</em>, and <em>Unhealthy</em> to help people understand daily air quality risks. It monitors pollutants like PM2.5, PM10, O₃, NO₂, SO₂, and CO.</p>
+  <p>For more information: 
+    <a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank">US EPA AQI Basics (AirNow.gov)</a>
+  </p>
+</div>
+
+<div class="aqi-table-comparison">
+  <h2>US AQI (EPA) vs WHO 2021 Air Quality Guidelines</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>US AQI (EPA)</th>
+        <th>WHO Air Quality Guidelines (2021)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Type</td>
+        <td>Numerical index (0–500) with color-coded categories (Good, Moderate, Unhealthy, etc.)</td>
+        <td>Concentration-based health guidelines for individual pollutants (e.g. PM2.5, PM10, NO₂, O₃)</td>
+      </tr>
+      <tr>
+        <td>Purpose</td>
+        <td>Public-friendly, daily air quality risk communication tool</td>
+        <td>Health-based recommended maximum exposure limits</td>
+      </tr>
+      <tr>
+        <td>Categories / Scale</td>
+        <td>✔️ Yes — 6 categories: Good, Moderate, Unhealthy for Sensitive Groups, Unhealthy, Very Unhealthy, Hazardous</td>
+        <td>❌ No categories or AQI scale — only specific safe pollutant limits</td>
+      </tr>
+      <tr>
+        <td>Pollutants Measured</td>
+        <td>PM2.5, PM10, O₃, NO₂, SO₂, CO</td>
+        <td>PM2.5, PM10, O₃, NO₂, SO₂, CO (same pollutants but stricter limits)</td>
+      </tr>
+      <tr>
+        <td>PM2.5 24-hr limit example</td>
+        <td>0–12 µg/m³ = Good, 35.5–55.4 µg/m³ = Unhealthy</td>
+        <td>15 µg/m³ maximum (exceeding this is unsafe)</td>
+      </tr>
+      <tr>
+        <td>Stringency</td>
+        <td>More lenient; allows higher pollutant concentrations before labeling air as unhealthy</td>
+        <td>Stricter; lower thresholds based on latest health evidence</td>
+      </tr>
+      <tr>
+        <td>Official AQI Index?</td>
+        <td>✔️ Yes</td>
+        <td>❌ No</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 10px; font-size: 14px; color: #bbb;">Sources: 
+    <a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank">US EPA AQI Basics</a>, 
+    <a href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health" target="_blank">WHO 2021 Global Air Quality Guidelines</a>
+  </p>
+</div>
+
+<div class="legend-info">
+  <div class="fact-box">
+    <strong>Fact:</strong> 1 cigarette = 22 µg/m³ (Berkeley’s PM2.5 rule)
+  </div>
+</div>
+
+
+<div class="legend-image">
+  <img src="/static/img/aqi_scale.png" alt="AQI Scale Legend">
+</div>
+
+<div class="controls">
+  <div class="search-box">
+    <i class="fa fa-search"></i>
+    <input type="text" id="searchInput" placeholder="Search for a country...">
+  </div>
+
+  <div class="page-limit">
+    <label for="rowsPerPage">Countries per page:</label>
+    <select id="rowsPerPage">
+      <option value="25">25</option>
+      <option value="50" selected>50</option>
+      <option value="100">100</option>
+    </select>
+  </div>
+</div>
+
+<div class="table-section">
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Country</th>
+        <th>2024</th>
+        <th>2023</th>
+        <th>2022</th>
+        <th>2021</th>
+        <th>2020</th>
+        <th>2019</th>
+        <th>2018</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody id="countryTableBody"></tbody>
+  </table>
+</div>
+
+<div id="pagination"></div>
+
+</body>
+</html>

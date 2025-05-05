@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Global Air Quality Dashboard</title>
+  <link rel="stylesheet" href="/static/css/about.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="/static/img/logo.svg" alt="Air Quality Dashboard Logo" class="logo">
+      <h1>Air Quality Dashboard</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/city-view">Map View</a></li>
+        <li><a href="/trends">Trends</a></li>
+        <li><a href="/graphs">Compare</a></li>
+        <li><a href="/insights">Insights</a></li>
+        <li><a href="/about" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Understanding Our Mission</h2>
+        <p>Providing accurate and accessible air quality data to promote environmental awareness and public health.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Vision</h2>
+      <p>At the Global Air Quality Dashboard, we believe that access to accurate air quality information is essential for public health and environmental decision-making. Our platform is designed to make complex air quality data accessible, understandable, and actionable for everyone.</p>
+      
+      <p>Air pollution is one of the greatest environmental health threats of our time, contributing to millions of premature deaths annually. By providing comprehensive visualization tools, we aim to raise awareness about air quality issues and empower individuals, communities, and policymakers to take informed action.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>About the Data</h2>
+      <p>Our dashboard utilizes the Air Quality Index (AQI), a standardized indicator developed by environmental agencies to communicate how polluted the air is and what associated health effects might be a concern. The AQI focuses on health effects that may be experienced within a few hours or days after breathing polluted air.</p>
+      
+      <div class="aqi-scale">
+        <h3>AQI Scale and Health Implications</h3>
+        <div class="scale-item" style="background-color: rgba(0, 228, 0, 0.2);">
+          <div class="color-block" style="background-color: #00e400;"></div>
+          <div class="scale-details">
+            <h4>Good (0-50)</h4>
+            <p>Air quality is considered satisfactory, and air pollution poses little or no risk.</p>
+          </div>
+        </div>
+        <div class="scale-item" style="background-color: rgba(255, 255, 0, 0.2);">
+          <div class="color-block" style="background-color: #ffff00;"></div>
+          <div class="scale-details">
+            <h4>Moderate (51-100)</h4>
+            <p>Air quality is acceptable; however, there may be a moderate health concern for a very small number of people.</p>
+          </div>
+        </div>
+        <div class="scale-item" style="background-color: rgba(255, 126, 0, 0.2);">
+          <div class="color-block" style="background-color: #ff7e00;"></div>
+          <div class="scale-details">
+            <h4>Unhealthy for Sensitive Groups (101-150)</h4>
+            <p>Members of sensitive groups may experience health effects. The general public is less likely to be affected.</p>
+          </div>
+        </div>
+        <div class="scale-item" style="background-color: rgba(255, 0, 0, 0.2);">
+          <div class="color-block" style="background-color: #ff0000;"></div>
+          <div class="scale-details">
+            <h4>Unhealthy (151-200)</h4>
+            <p>Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects.</p>
+          </div>
+        </div>
+        <div class="scale-item" style="background-color: rgba(153, 0, 76, 0.2);">
+          <div class="color-block" style="background-color: #99004c;"></div>
+          <div class="scale-details">
+            <h4>Very Unhealthy (201-300)</h4>
+            <p>Health warnings of emergency conditions. The entire population is more likely to be affected.</p>
+          </div>
+        </div>
+        <div class="scale-item" style="background-color: rgba(126, 0, 35, 0.2);">
+          <div class="color-block" style="background-color: #7e0023;"></div>
+          <div class="scale-details">
+            <h4>Hazardous (301+)</h4>
+            <p>Health alert: everyone may experience more serious health effects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Features of Our Dashboard</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h3>City View Map</h3>
+          <p>Interactive map displaying AQI levels across cities in India with color-coded markers.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Trends Analysis</h3>
+          <p>Historical data visualization showing AQI trends across countries over multiple years.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Country Comparison</h3>
+          <p>Tools to compare air quality between different countries and regions.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Insights Dashboard</h3>
+          <p>Analytical insights about global air pollution patterns and seasonal variations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>How to Use This Dashboard</h2>
+      <ol>
+        <li><strong>Explore the map:</strong> Use the City View to see AQI levels across different locations.</li>
+        <li><strong>Track historical data:</strong> Check the Trends page to understand how air quality has changed over time.</li>
+        <li><strong>Compare regions:</strong> Use the comparison tools to see how different areas compare.</li>
+        <li><strong>Gain insights:</strong> Visit the Insights page for deeper analysis and patterns.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Air Quality Dashboard</h3>
+        <p>© 2025 Air Quality Monitoring Project</p>
+      </div>
+      <div class="footer-section">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/city-view">Map View</a></li>
+          <li><a href="/trends">Trends</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="/insights">Data Insights</a></li>
+          <li><a href="/export-data">Export Data</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>All data is sourced from public environmental monitoring agencies.</p>
+    </div>
+  </footer>
+</body>
+</html>

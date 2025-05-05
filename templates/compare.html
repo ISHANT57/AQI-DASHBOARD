@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compare Countries | AQI Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/compare.css') }}">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo-container">
+    <img src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="Dashboard Logo">
+  </div>
+
+  <div class="dashboard-box">
+    <h2 class="dashboard-title">AQI Dashboard</h2>
+    <div class="nav-box"><a href="{{ url_for('home') }}">Dashboard</a></div>
+    <div class="nav-box"><a href="{{ url_for('compare_page') }}">Compare Countries</a></div>
+    <div class="nav-box"><a href="#">City View</a></div>
+    <div class="nav-box"><a href="#">About</a></div>
+    <div class="nav-box"><a href="#">Contact</a></div>
+  </div>
+</div>
+
+<div class="main-compare">
+  <h1 class="highlight">📊 Compare Countries</h1>
+  <p>Welcome to the Compare Countries section of the AQI Dashboard. Explore different analyses, graphs, and rankings to understand the air quality situation globally.</p>
+
+  <div class="summary-grid">
+
+    <div class="summary-card">
+      <h3>📈 Trend Analysis</h3>
+      <p>Visualize how each country's air quality has changed over the years.</p>
+      <a href="{{ url_for('trends') }}">View Trends</a>
+    </div>
+
+    <div class="summary-card">
+      <h3>🖱️ Interactive Graphs</h3>
+      <p>Compare countries by selecting them to view their AQI trends side by side.</p>
+      <a href="{{ url_for('open_graphs') }}">Open Graphs</a>
+    </div>
+
+    <div class="summary-card">
+      <h3>🥇 AQI Rankings</h3>
+      <p>Discover which countries have the highest or lowest AQI values this year.</p>
+      <a href="{{ url_for('ranking') }}">View Rankings</a>
+    </div>
+
+    <div class="summary-card">
+      <h3>📅 Yearly Insights</h3>
+      <p>Track AQI data from 2018 to 2024 for yearly historical comparisons.</p>
+      <a href="{{ url_for('insights') }}">Explore Insights</a>
+    </div>
+
+    <div class="summary-card">
+      <h3>📁 Exportable Reports</h3>
+      <p>Download comparison charts and data reports as PDFs or images.</p>
+      <a href="{{ url_for('export_data') }}">Download Reports</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

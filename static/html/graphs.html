@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AQI Open Graphs</title>
+  <link rel="stylesheet" href="/static/css/graphs.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/js/graphs.js" defer></script>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Open Graphs — AQI Country Comparison</h1>
+</div>
+
+<div class="controls">
+  <label>Graph Type:</label>
+  <select id="graphType">
+    <option value="line">Line Chart</option>
+    <option value="bar">Bar Chart</option>
+    <option value="bubble">Bubble Chart</option>
+  </select>
+
+  <label id="yearLabel" style="display:none;">Year:</label>
+  <select id="yearSelect" style="display:none;">
+    <option value="2024">2024</option>
+    <option value="2023">2023</option>
+    <option value="2022">2022</option>
+    <option value="2021">2021</option>
+    <option value="2020">2020</option>
+    <option value="2019">2019</option>
+    <option value="2018">2018</option>
+  </select>
+
+  <div id="countrySelectors">
+    <label>Country 1:</label>
+    <select id="country1"></select>
+
+    <label>Country 2:</label>
+    <select id="country2"></select>
+
+    <label>Country 3:</label>
+    <select id="country3"></select>
+  </div>
+
+  <button id="updateGraph">Update Graph</button>
+</div>
+
+<div class="chart-box">
+  <canvas id="aqiChart"></canvas>
+</div>
+
+<!-- Sun toggle button -->
+<div id="sun-toggle" title="Toggle Color Mode ☀️">
+  <svg viewBox="0 0 64 64" width="50" height="50">
+    <circle cx="32" cy="32" r="14" fill="#ffcf33"/>
+    <g stroke="#ffcf33" stroke-width="4">
+      <line x1="32" y1="2" x2="32" y2="12"/>
+      <line x1="32" y1="52" x2="32" y2="62"/>
+      <line x1="2" y1="32" x2="12" y2="32"/>
+      <line x1="52" y1="32" x2="62" y2="32"/>
+      <line x1="12" y1="12" x2="20" y2="20"/>
+      <line x1="44" y1="44" x2="52" y2="52"/>
+      <line x1="12" y1="52" x2="20" y2="44"/>
+      <line x1="44" y1="20" x2="52" y2="12"/>
+    </g>
+  </svg>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="150" viewBox="0 0 800 150">
+  <style>
+    .title { font: bold 18px Arial, sans-serif; fill: #333; }
+    .label { font: 14px Arial, sans-serif; fill: #333; text-anchor: middle; }
+    .value { font: 12px Arial, sans-serif; fill: #333; text-anchor: middle; }
+    .desc { font: 12px Arial, sans-serif; fill: #333; text-anchor: middle; }
+  </style>
+  
+  <!-- Title -->
+  <text x="400" y="25" class="title" text-anchor="middle">US EPA Air Quality Index (AQI)</text>
+  
+  <!-- Color Bars -->
+  <rect x="50" y="40" width="117" height="60" fill="#00e400" />
+  <rect x="167" y="40" width="117" height="60" fill="#ffff00" />
+  <rect x="284" y="40" width="117" height="60" fill="#ff7e00" />
+  <rect x="401" y="40" width="117" height="60" fill="#ff0000" />
+  <rect x="518" y="40" width="117" height="60" fill="#99004c" />
+  <rect x="635" y="40" width="117" height="60" fill="#7e0023" />
+  
+  <!-- Labels -->
+  <text x="108.5" y="70" class="label">Good</text>
+  <text x="225.5" y="70" class="label">Moderate</text>
+  <text x="342.5" y="70" class="label">Unhealthy for</text>
+  <text x="342.5" y="88" class="label">Sensitive Groups</text>
+  <text x="459.5" y="70" class="label">Unhealthy</text>
+  <text x="576.5" y="70" class="label">Very Unhealthy</text>
+  <text x="693.5" y="70" class="label">Hazardous</text>
+  
+  <!-- Values -->
+  <text x="50" y="120" class="value" text-anchor="start">0</text>
+  <text x="161" y="120" class="value" text-anchor="end">50</text>
+  <text x="167" y="120" class="value" text-anchor="start">51</text>
+  <text x="278" y="120" class="value" text-anchor="end">100</text>
+  <text x="284" y="120" class="value" text-anchor="start">101</text>
+  <text x="395" y="120" class="value" text-anchor="end">150</text>
+  <text x="401" y="120" class="value" text-anchor="start">151</text>
+  <text x="512" y="120" class="value" text-anchor="end">200</text>
+  <text x="518" y="120" class="value" text-anchor="start">201</text>
+  <text x="629" y="120" class="value" text-anchor="end">300</text>
+  <text x="635" y="120" class="value" text-anchor="start">301</text>
+  <text x="752" y="120" class="value" text-anchor="end">500+</text>
+  
+  <!-- Description -->
+  <text x="400" y="140" class="desc" text-anchor="middle">Higher values mean worse air quality and greater health concerns</text>
+</svg>
